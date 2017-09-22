@@ -5,13 +5,37 @@
 </ion-header>
 
 <ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+ <p *ngIf="flag">
+hellooo
+ </p>
+<button ion-button round (click)="onClick()">Primary Round</button>
+
+<p *ngIf="flag1;else demo">
+hello. how are you??
+</p>
+
+<ng-template #demo>
+<p>im fine.</p>
+</ng-template>
+<button ion-button color="dark" (click)="onClick1()">Dark</button>
+
+
+<p  [hidden]="flag2" >dummyyy..</p>
+<img [height]="x" style="border:1px solid black">
+<button  type="button" [disabled]="flag2" >click me</button>
+<button ion-button color="dark" (click)="onClick2()">Dark</button>
+
+<button ion-button color="dark" (click)="takePicture()">Take Photo</button>
+<button ion-button color="dark" (click)="imageDemo()">image Picker</button>
+<button ion-button (click)="demo12()">Jinal</button>
+
+<img [src]="base64Image" *ngIf="base64Image" />
+<ul>
+  <li *ngFor="let a of arr">{{a}}</li>
+</ul>
+<!--<div class="gallery-button" text-center>
+  <img [src]="imageSrc" />    
+<ion-icon name="images" on-tap="openGallery()"></ion-icon>
+<p>Choose a Photo</p>  
+</div>-->
 </ion-content>
